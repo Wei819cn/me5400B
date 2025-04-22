@@ -32,8 +32,8 @@ recovery_behaviors:
   #  type: 'clear_costmap_recovery/ClearCostmapRecovery'
   #- name: 'super_reset'
   #  type: 'clear_costmap_recovery/ClearCostmapRecovery'
-  - name: 'clearing_rotation'  
-    type: 'rotate_recovery/RotateRecovery'  
+  #- name: 'clearing_rotation'  
+  #  type: 'rotate_recovery/RotateRecovery'  
   #- name: 'move_slow_and_clear'
     #type: 'move_slow_and_clear/MoveSlowAndClear'
     

@@ -8,7 +8,7 @@ TebLocalPlannerROS:
  dt_ref: 0.3 #局部路径规划的解析度# minimum 0.01
  dt_hysteresis: 0.1 #允许改变的时域解析度的浮动范围， 一般为 dt_ref 的 10% 左右 minimum0.002
  global_plan_overwrite_orientation: False #覆盖全局路径中局部路径点的朝向
- max_global_plan_lookahead_dist: 3.0 #考虑优化的全局计划子集的最大长度
+ max_global_plan_lookahead_dist: 1.0 #考虑优化的全局计划子集的最大长度
  feasibility_check_no_poses: 1 #检测位姿可到达的时间间隔 minimum 0
 
  # Robot
@@ -46,7 +46,7 @@ TebLocalPlannerROS:
  complete_global_plan: True
  
  # Obstacles
- min_obstacle_dist: 0.1 #和障碍物最小距离
+ min_obstacle_dist: 0.01 #和障碍物最小距离
  include_costmap_obstacles: True  #是否将动态障碍物预测为速度模型，
  costmap_obstacles_behind_robot_dist: 1.5  #限制机器人后方规划时考虑的局部成本地图障碍物
  obstacle_poses_affected: 15   #障碍物姿态受影响0~30
