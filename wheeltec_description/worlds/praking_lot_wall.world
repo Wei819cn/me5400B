@@ -1,0 +1,2572 @@
+<sdf version='1.7'>
+  <world name='parking_lot'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='wood_ground_plane'>
+      <static>1</static>
+      <pose>0 0 0 0 -0 0</pose>
+      <link name='ground_link'>
+        <visual name='ground_visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>20 20</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>20 20</size>
+            </plane>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_1'>
+      <static>1</static>
+      <pose>0 0.3 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_2'>
+      <static>1</static>
+      <pose>0 0.6 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_3'>
+      <static>1</static>
+      <pose>0 0.9 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_4'>
+      <static>1</static>
+      <pose>0 1.2 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_5'>
+      <static>1</static>
+      <pose>0 1.5 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_6'>
+      <static>1</static>
+      <pose>0 1.8 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_7'>
+      <static>1</static>
+      <pose>0 2.1 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_8'>
+      <static>1</static>
+      <pose>0 2.4 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_9'>
+      <static>1</static>
+      <pose>1 0 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_10'>
+      <static>1</static>
+      <pose>1.4 0 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_11'>
+      <static>1</static>
+      <pose>1 1.8 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_12'>
+      <static>1</static>
+      <pose>1 1.5 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_13'>
+      <static>1</static>
+      <pose>1 1.2 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_14'>
+      <static>1</static>
+      <pose>1 0.9 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_15'>
+      <static>1</static>
+      <pose>1.4 1.8 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_16'>
+      <static>1</static>
+      <pose>1.4 1.5 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_17'>
+      <static>1</static>
+      <pose>1.4 1.2 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_18'>
+      <static>1</static>
+      <pose>1.4 0.9 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_19'>
+      <static>1</static>
+      <pose>1 2.5 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='parking_spot_20'>
+      <static>1</static>
+      <pose>1.4 2.5 0 0 -0 0</pose>
+      <link name='spot_link'>
+        <visual name='base_plate'>
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <visual name='top_border'>
+          <pose>0 0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='bottom_border'>
+          <pose>0 -0.15 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='left_border'>
+          <pose>-0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name='right_border'>
+          <pose>0.2 0 0.002 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='wheeltec'>
+      <link name='base_footprint'>
+        <inertial>
+          <pose>-0.016169 0.000733 0.051414 0 -0 0</pose>
+          <mass>1.003</mass>
+          <inertia>
+            <ixx>0.0217035</ixx>
+            <ixy>-4.67738e-08</ixy>
+            <ixz>-1.93087e-05</ixz>
+            <iyy>0.0508926</iyy>
+            <iyz>-1.07668e-08</iyz>
+            <izz>0.0308658</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
+          <pose>0 0 0.025 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__camera_link_collision_1'>
+          <pose>0.1402 0.000219 0.118025 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/camera_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__imu_link_collision_2'>
+          <pose>-0.03 0 0.085 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.02 0.01</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_footprint_fixed_joint_lump__laser_link_collision_3'>
+          <pose>0.051872 0.000116 0.1556 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/rplidar_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
+          <pose>0 0 0.025 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__camera_link_visual_1'>
+          <pose>0.1402 0.000219 0.118025 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/camera_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__imu_link_visual_2'>
+          <pose>-0.03 0 0.085 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.01 0.01 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_footprint_fixed_joint_lump__laser_link_visual_3'>
+          <pose>0.051872 0.000116 0.1556 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/rplidar_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <sensor name='camera' type='depth'>
+          <always_on>1</always_on>
+          <update_rate>20</update_rate>
+          <camera>
+            <horizontal_fov>1.04717</horizontal_fov>
+            <image>
+              <format>R8G8B8</format>
+              <width>640</width>
+              <height>480</height>
+            </image>
+            <clip>
+              <near>0.05</near>
+              <far>8</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <plugin name='astra_camera_controller' filename='libgazebo_ros_openni_kinect.so'>
+            <cameraName>camera</cameraName>
+            <alwaysOn>1</alwaysOn>
+            <updateRate>10</updateRate>
+            <imageTopicName>rgb/image_raw</imageTopicName>
+            <depthImageTopicName>depth/image_raw</depthImageTopicName>
+            <pointCloudTopicName>depth/points</pointCloudTopicName>
+            <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+            <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+            <frameName>camera_frame_optical</frameName>
+            <baseline>0.1</baseline>
+            <distortion_k1>0.0</distortion_k1>
+            <distortion_k2>0.0</distortion_k2>
+            <distortion_k3>0.0</distortion_k3>
+            <distortion_t1>0.0</distortion_t1>
+            <distortion_t2>0.0</distortion_t2>
+            <pointCloudCutoff>0.4</pointCloudCutoff>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose>0.1402 0.000219 0.118025 0 -0 0</pose>
+        </sensor>
+        <gravity>1</gravity>
+        <sensor name='imu_sensor' type='imu'>
+          <always_on>1</always_on>
+          <update_rate>100</update_rate>
+          <visualize>1</visualize>
+          <topic>/imu_data</topic>
+          <plugin name='imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
+            <topicName>/imu_data</topicName>
+            <bodyName>imu_link</bodyName>
+            <updateRateHZ>100.0</updateRateHZ>
+            <gaussianNoise>0.0</gaussianNoise>
+            <xyzOffset>0 0 0</xyzOffset>
+            <rpyOffset>0 0 0</rpyOffset>
+            <frameName>imu_link</frameName>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose>-0.03 0 0.085 0 -0 0</pose>
+          <imu/>
+        </sensor>
+        <sensor name='rplidar' type='ray'>
+          <visualize>0</visualize>
+          <update_rate>40</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>720</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.14159</min_angle>
+                <max_angle>3.14159</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.1</min>
+              <max>30</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0</stddev>
+            </noise>
+          </ray>
+          <plugin name='gazebo_rplidar' filename='libgazebo_ros_laser.so'>
+            <topicName>/scan</topicName>
+            <frameName>laser_link</frameName>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose>0.051872 0.000116 0.1556 0 -0 0</pose>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='left_rear_wheel_joint' type='revolute'>
+        <pose relative_to='base_footprint'>-0.069152 0.083 0.0415 0 -0 0</pose>
+        <parent>base_footprint</parent>
+        <child>left_rear_wheel_link</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <effort>3.9</effort>
+            <velocity>38.7</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='left_rear_wheel_link'>
+        <pose relative_to='left_rear_wheel_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0.002795 0 0 -0 0</pose>
+          <mass>0.0515533</mass>
+          <inertia>
+            <ixx>1.99604e-05</ixx>
+            <ixy>1.47024e-14</ixy>
+            <ixz>-1.56178e-10</ixz>
+            <iyy>3.41117e-05</iyy>
+            <iyz>1.59751e-15</iyz>
+            <izz>1.99607e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='left_rear_wheel_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/left_rear_wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>40</mu>
+                <mu2>40</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='left_rear_wheel_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/left_rear_wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='left_steering_joint' type='revolute'>
+        <pose relative_to='base_footprint'>0.074098 0.081003 0.038 0 -0 0</pose>
+        <parent>base_footprint</parent>
+        <child>left_front_axle_carrier</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-0.523281</lower>
+            <upper>0.523281</upper>
+            <effort>0.045</effort>
+            <velocity>4.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='left_front_axle_carrier'>
+        <pose relative_to='left_steering_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.001</iyy>
+            <iyz>0</iyz>
+            <izz>0.001</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='left_front_wheel_joint' type='revolute'>
+        <pose relative_to='left_front_axle_carrier'>0 0 0 0 -0 0</pose>
+        <parent>left_front_axle_carrier</parent>
+        <child>left_front_wheel_link</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <effort>3.9</effort>
+            <velocity>36.92</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='left_front_wheel_link'>
+        <pose relative_to='left_front_wheel_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0.002282 -0 0 -0 0</pose>
+          <mass>0.0515533</mass>
+          <inertia>
+            <ixx>1.91343e-05</ixx>
+            <ixy>4.51397e-15</ixy>
+            <ixz>9.52734e-10</ixz>
+            <iyy>3.30122e-05</iyy>
+            <iyz>-4.48462e-15</iyz>
+            <izz>1.91372e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='left_front_wheel_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/left_front_wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>40</mu>
+                <mu2>40</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='left_front_wheel_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/left_front_wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='right_rear_wheel_joint' type='revolute'>
+        <pose relative_to='base_footprint'>-0.069152 -0.083 0.0415 0 -0 0</pose>
+        <parent>base_footprint</parent>
+        <child>right_rear_wheel_link</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <effort>3.9</effort>
+            <velocity>38.7</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='right_rear_wheel_link'>
+        <pose relative_to='right_rear_wheel_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0 -0.002795 0 0 -0 0</pose>
+          <mass>0.0515533</mass>
+          <inertia>
+            <ixx>1.99604e-05</ixx>
+            <ixy>1.47024e-14</ixy>
+            <ixz>1.56178e-10</ixz>
+            <iyy>3.41117e-05</iyy>
+            <iyz>-1.59751e-15</iyz>
+            <izz>1.99607e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='right_rear_wheel_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/right_rear_wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>40</mu>
+                <mu2>40</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='right_rear_wheel_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/right_rear_wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='right_steering_joint' type='revolute'>
+        <pose relative_to='base_footprint'>0.074098 -0.080997 0.038 0 -0 0</pose>
+        <parent>base_footprint</parent>
+        <child>right_front_axle_carrier</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-0.523281</lower>
+            <upper>0.523281</upper>
+            <effort>0.045</effort>
+            <velocity>4.5</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='right_front_axle_carrier'>
+        <pose relative_to='right_steering_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.001</iyy>
+            <iyz>0</iyz>
+            <izz>0.001</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='right_front_wheel_joint' type='revolute'>
+        <pose relative_to='right_front_axle_carrier'>0 0 0 0 -0 0</pose>
+        <parent>right_front_axle_carrier</parent>
+        <child>right_front_wheel_link</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <effort>3.9</effort>
+            <velocity>36.92</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='right_front_wheel_link'>
+        <pose relative_to='right_front_wheel_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.002282 0 0 -0 0</pose>
+          <mass>0.0515533</mass>
+          <inertia>
+            <ixx>1.91351e-05</ixx>
+            <ixy>-4.51401e-15</ixy>
+            <ixz>-2.66124e-10</ixz>
+            <iyy>3.30132e-05</iyy>
+            <iyz>-4.48462e-15</iyz>
+            <izz>1.91374e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='right_front_wheel_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/right_front_wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>40</mu>
+                <mu2>40</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='right_front_wheel_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_description/meshes/mini_akm/right_front_wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>0</static>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>/wheeltec</robotNamespace>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        <legacyModeNS>1</legacyModeNS>
+      </plugin>
+      <pose>0 0 0 0 -0 0</pose>
+    </model>
+    <model name='parking_wall_3.5m'>
+      <pose>1.38369 2.06795 0 0 -0 0</pose>
+      <link name='Wall_2'>
+        <collision name='Wall_2_Collision'>
+          <geometry>
+            <box>
+              <size>3.5 0.15 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_2_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>3.5 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>0 0.942857 0 0 -0 3.14159</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_3'>
+        <collision name='Wall_3_Collision'>
+          <geometry>
+            <box>
+              <size>3.5 0.15 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_3_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>3.5 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>-1.675 -0.732143 0 0 -0 -1.5708</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_4'>
+        <collision name='Wall_4_Collision'>
+          <geometry>
+            <box>
+              <size>3.5 0.15 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_4_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>3.5 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>0 -2.40714 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_5'>
+        <collision name='Wall_5_Collision'>
+          <geometry>
+            <box>
+              <size>3.5 0.15 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_5_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>3.5 0.15 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>1.675 -0.732143 0 0 -0 1.5708</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+    </model>
+    <state world_name='parking_lot'>
+      <sim_time>200 772000000</sim_time>
+      <real_time>203 555691926</real_time>
+      <wall_time>1741713211 918913511</wall_time>
+      <iterations>200772</iterations>
+      <model name='parking_spot_1'>
+        <pose>0 0.3 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>0 0.3 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_10'>
+        <pose>1.4 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1.4 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_11'>
+        <pose>1 1.8 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1 1.8 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_12'>
+        <pose>1 1.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1 1.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_13'>
+        <pose>1 1.2 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1 1.2 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_14'>
+        <pose>1 0.9 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1 0.9 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_15'>
+        <pose>1.4 1.8 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1.4 1.8 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_16'>
+        <pose>1.4 1.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1.4 1.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_17'>
+        <pose>1.4 1.2 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1.4 1.2 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_18'>
+        <pose>1.4 0.9 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1.4 0.9 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_19'>
+        <pose>1 2.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1 2.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_2'>
+        <pose>0 0.6 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>0 0.6 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_20'>
+        <pose>1.4 2.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1.4 2.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_3'>
+        <pose>0 0.9 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>0 0.9 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_4'>
+        <pose>0 1.2 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>0 1.2 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_5'>
+        <pose>0 1.5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>0 1.5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_6'>
+        <pose>0 1.8 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>0 1.8 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_7'>
+        <pose>0 2.1 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>0 2.1 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_8'>
+        <pose>0 2.4 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>0 2.4 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_spot_9'>
+        <pose>1 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='spot_link'>
+          <pose>1 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='parking_wall_3.5m'>
+        <pose>1.38369 2.06795 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='Wall_2'>
+          <pose>1.38369 3.01081 0 0 -0 3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_3'>
+          <pose>-0.29131 1.33581 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_4'>
+          <pose>1.38369 -0.33919 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_5'>
+          <pose>3.05869 1.33581 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wheeltec'>
+        <pose>0.004871 -0.020124 -0.007838 -6.7e-05 -0.024298 -0.090664</pose>
+        <scale>1 1 1</scale>
+        <link name='base_footprint'>
+          <pose>0.004871 -0.020124 -0.007838 -6.7e-05 -0.024298 -0.090664</pose>
+          <velocity>0.00017 0.000586 0.002107 0.016825 -0.001778 0.000205</velocity>
+          <acceleration>0.057206 -0.44892 4.94112 2.4331 0.800154 0.307164</acceleration>
+          <wrench>0.057378 -0.450267 4.95594 0 -0 0</wrench>
+        </link>
+        <link name='left_front_axle_carrier'>
+          <pose>0.085057 0.053925 0.031964 -6.5e-05 -0.024298 -0.090665</pose>
+          <velocity>-2.1e-05 -0.00028 0.008807 0.017186 -0.001834 0.00016</velocity>
+          <acceleration>0.004302 -0.283585 17.1866 -0.97135 0.330503 3.11798</acceleration>
+          <wrench>4.3e-05 -0.002836 0.171866 0 -0 0</wrench>
+        </link>
+        <link name='left_front_wheel_link'>
+          <pose>0.085057 0.053925 0.031962 -4.4e-05 -0.016254 -0.090666</pose>
+          <velocity>-4.8e-05 -0.000321 0.008272 0.010049 -0.001494 -0.000119</velocity>
+          <acceleration>-0.036234 -0.340684 16.4097 2.42981 0.962881 -0.424979</acceleration>
+          <wrench>-0.001868 -0.017563 0.845974 0 -0 0</wrench>
+        </link>
+        <link name='left_rear_wheel_link'>
+          <pose>-0.057466 0.068887 0.031962 -4.4e-05 0.067872 -0.090668</pose>
+          <velocity>-2.3e-05 -0.000465 0.002595 0.014568 -0.000679 0.000422</velocity>
+          <acceleration>0.044668 -0.410751 6.85665 2.79573 1.35582 -2.88049</acceleration>
+          <wrench>0.002303 -0.021176 0.353483 0 -0 0</wrench>
+        </link>
+        <link name='right_front_axle_carrier'>
+          <pose>0.07039 -0.107409 0.031957 -6.7e-05 -0.024298 -0.090664</pose>
+          <velocity>0.000136 -1.4e-05 0.000855 0.016829 -0.001643 0.000187</velocity>
+          <acceleration>0.190857 0.026041 2.36308 -1.78418 -0.018224 3.12683</acceleration>
+          <wrench>0.001909 0.00026 0.023631 0 -0 0</wrench>
+        </link>
+        <link name='right_front_wheel_link'>
+          <pose>0.07039 -0.107409 0.031955 -7.4e-05 0.02088 -0.090665</pose>
+          <velocity>5.2e-05 -0.000236 0.000422 0.007315 0.00134 0.000808</velocity>
+          <acceleration>0.086778 -0.084748 1.69816 -0.865487 -1.38012 0.935935</acceleration>
+          <wrench>0.004474 -0.004369 0.087546 0 -0 0</wrench>
+        </link>
+        <link name='right_rear_wheel_link'>
+          <pose>-0.072496 -0.09643 0.031975 -0 -0.058886 -0.090661</pose>
+          <velocity>7.5e-05 -6.1e-05 0.000453 0.001833 0.001937 0.001184</velocity>
+          <acceleration>0.016111 -0.297262 0.776949 -2.71231 -1.30843 -1.74066</acceleration>
+          <wrench>0.000831 -0.015325 0.040054 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wood_ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='ground_link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-0.84654 3.69086 4.75165 0 1.1018 -0.70458</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

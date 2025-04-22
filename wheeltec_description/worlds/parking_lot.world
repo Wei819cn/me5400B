@@ -1,0 +1,2470 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="parking_lot">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- ========== 1. 木质地面 (wood_ground_plane) ========== -->
+    <model name="wood_ground_plane">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="ground_link">
+        <visual name="ground_visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <!-- 尺寸可根据需要调大 -->
+              <size>20 20</size>
+            </plane>
+          </geometry>
+          <material>
+            <!-- 木质黄色 (RGBA) -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>20 20</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+
+
+    <!-- ========== 2. 3.5m围墙 ========== -->
+    <model name='parking_wall_3.5m'>
+      <pose>1.18369 2.06795 0 0 -0 0</pose>
+      <link name='Wall_2'>
+        <collision name='Wall_2_Collision'>
+          <geometry>
+            <box>
+              <size>3.5 0.15 0.3</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.15 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_2_Visual'>
+          <pose>0 0 0.15 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>3.5 0.15 0.3</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>0 0.942857 0 0 -0 3.14159</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_3'>
+        <collision name='Wall_3_Collision'>
+          <geometry>
+            <box>
+              <size>3.5 0.15 0.3</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.15 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_3_Visual'>
+          <pose>0 0 0.15 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>3.5 0.15 0.3</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>-1.675 -0.732143 0 0 -0 -1.5708</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_4'>
+        <collision name='Wall_4_Collision'>
+          <geometry>
+            <box>
+              <size>3.5 0.15 0.3</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.15 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_4_Visual'>
+          <pose>0 0 0.15 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>3.5 0.15 0.3</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>0 -2.40714 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_5'>
+        <collision name='Wall_5_Collision'>
+          <geometry>
+            <box>
+              <size>3.5 0.15 0.3</size>
+            </box>
+          </geometry>
+          <pose>0 0 0.15 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='Wall_5_Visual'>
+          <pose>0 0 0.15 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>3.5 0.15 0.3</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+          <meta>
+            <layer>0</layer>
+          </meta>
+        </visual>
+        <pose>1.675 -0.732143 0 0 -0 1.5708</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+    </model>
+    
+
+    <!-- 
+      ========== 3. 中间区域示例：2行 x 3列停车位 ==========
+      每个车位： 0.4m(长) x 0.3m(宽)，木质底色与地面一致，边框白色
+      这里示范放在 (x ~ 2.2 ~ 3.0, y ~ 2.0 / 1.6)，可按需修改
+    -->
+    
+    <!-- 车位示例函数式描述：
+         - 半长 = 0.2, 半宽 = 0.15
+         - 若要相邻，当前车位右边缘 = 下一车位左边缘
+         - 例如第1列中心 x=2.2, 第2列 x=2.6, 第3列 x=3.0 (间隔0.4)
+         - 第1行 y=2.0, 第2行 y=1.6 (间隔0.4)
+    -->
+
+    <!-- spot_1 -->
+    <model name="parking_spot_1">
+      <static>true</static>
+      <pose>0 0.3 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_2 -->
+    <model name="parking_spot_2">
+      <static>true</static>
+      <pose>0 0.6 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_3 -->
+    <model name="parking_spot_3">
+      <static>true</static>
+      <pose>0 0.9 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_4 -->
+    <model name="parking_spot_4">
+      <static>true</static>
+      <pose>0 1.2 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_5 -->
+    <model name="parking_spot_5">
+      <static>true</static>
+      <pose>0 1.5 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_6 -->
+    <model name="parking_spot_6">
+      <static>true</static>
+      <pose>0 1.8 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_7 -->
+    <model name="parking_spot_7">
+      <static>true</static>
+      <pose>0 2.1 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_8 -->
+    <model name="parking_spot_8">
+      <static>true</static>
+      <pose>0 2.4 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_9 -->
+    <model name="parking_spot_9">
+      <static>true</static>
+      <pose>1 0 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_10 -->
+    <model name="parking_spot_10">
+      <static>true</static>
+      <pose>1.4 0 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_11 -->
+    <model name="parking_spot_11">
+      <static>true</static>
+      <pose>1 1.8 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_12 -->
+    <model name="parking_spot_12">
+      <static>true</static>
+      <pose>1 1.5 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_13 -->
+    <model name="parking_spot_13">
+      <static>true</static>
+      <pose>1 1.2 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_14 -->
+    <model name="parking_spot_14">
+      <static>true</static>
+      <pose>1 0.9 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_15 -->
+    <model name="parking_spot_15">
+      <static>true</static>
+      <pose>1.4 1.8 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_16 -->
+    <model name="parking_spot_16">
+      <static>true</static>
+      <pose>1.4 1.5 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_17 -->
+    <model name="parking_spot_17">
+      <static>true</static>
+      <pose>1.4 1.2 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_18 -->
+    <model name="parking_spot_18">
+      <static>true</static>
+      <pose>1.4 0.9 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_19 -->
+    <model name="parking_spot_19">
+      <static>true</static>
+      <pose>1 2.7 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_20 -->
+    <model name="parking_spot_20">
+      <static>true</static>
+      <pose>1.4 2.7 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_21 -->
+    <model name="parking_spot_21">
+      <static>true</static>
+      <pose>2.4 2.4 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_22 -->
+    <model name="parking_spot_22">
+      <static>true</static>
+      <pose>2.4 2.1 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_23 -->
+    <model name="parking_spot_23">
+      <static>true</static>
+      <pose>2.4 1.8 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_24 -->
+    <model name="parking_spot_24">
+      <static>true</static>
+      <pose>2.4 1.5 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_25 -->
+    <model name="parking_spot_25">
+      <static>true</static>
+      <pose>2.4 1.2 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_26 -->
+    <model name="parking_spot_26">
+      <static>true</static>
+      <pose>2.4 0.9 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_27 -->
+    <model name="parking_spot_27">
+      <static>true</static>
+      <pose>2.4 0.6 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- spot_28 -->
+    <model name="parking_spot_28">
+      <static>true</static>
+      <pose>2.4 0.3 0 0 0 0</pose>
+      <link name="spot_link">
+        <!-- 因地面也为木色，这里若要“看得见车位区域”，可留一浅色或同木色 -->
+        <visual name="base_plate">
+          <geometry>
+            <box>
+              <size>0.4 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 同样木质黄色，可稍调深浅 -->
+            <ambient>0.9 0.7 0.4 1</ambient>
+            <diffuse>0.9 0.7 0.4 1</diffuse>
+          </material>
+        </visual>
+        <!-- 四条白线边框 -->
+        <visual name="top_border">
+          <pose>0 0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="bottom_border">
+          <pose>0 -0.15 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.4 0.005 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="left_border">
+          <pose>-0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="right_border">
+          <pose>0.2 0 0.002 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.005 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+
+
+<!-- ========== 4. 占位方块 ========== -->
+<!-- ========== box_1 ========== -->
+    <model name="colored_box_1">
+      <!-- 如果需要动态物体则设置为 false，若只做展示可设置为 true -->
+      <static>false</static>
+      <!-- 这里的 pose 中 z 值设为 0.1，即高度的一半，方便方块平稳放置在地面上 -->
+      <pose>0 0.6 0.1 0 0 0</pose>
+      <link name="box_link">
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 这里设置了红色作为示例，你可以根据需要修改颜色（RGBA 格式） -->
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- ========== box_2 ========== -->
+    <model name="colored_box_2">
+      <!-- 如果需要动态物体则设置为 false，若只做展示可设置为 true -->
+      <static>false</static>
+      <!-- 这里的 pose 中 z 值设为 0.075，即高度的一半，方便方块平稳放置在地面上 -->
+      <pose>0 1.2 0.1 0 0 0</pose>
+      <link name="box_link">
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 这里设置了红色作为示例，你可以根据需要修改颜色（RGBA 格式） -->
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+
+    <!-- ========== box_3 ========== -->
+    <model name="colored_box_3">
+      <!-- 如果需要动态物体则设置为 false，若只做展示可设置为 true -->
+      <static>false</static>
+      <!-- 这里的 pose 中 z 值设为 0.075，即高度的一半，方便方块平稳放置在地面上 -->
+      <pose>1 0 0.1 0 0 0</pose>
+      <link name="box_link">
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 这里设置了红色作为示例，你可以根据需要修改颜色（RGBA 格式） -->
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- ========== box_4 ========== -->
+    <model name="colored_box_4">
+      <!-- 如果需要动态物体则设置为 false，若只做展示可设置为 true -->
+      <static>false</static>
+      <!-- 这里的 pose 中 z 值设为 0.075，即高度的一半，方便方块平稳放置在地面上 -->
+      <pose>1 0.9 0.1 0 0 0</pose>
+      <link name="box_link">
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 这里设置了红色作为示例，你可以根据需要修改颜色（RGBA 格式） -->
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- ========== box_5 ========== -->
+    <model name="colored_box_5">
+      <!-- 如果需要动态物体则设置为 false，若只做展示可设置为 true -->
+      <static>false</static>
+      <!-- 这里的 pose 中 z 值设为 0.075，即高度的一半，方便方块平稳放置在地面上 -->
+      <pose>1 1.5 0.1 0 0 0</pose>
+      <link name="box_link">
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 这里设置了红色作为示例，你可以根据需要修改颜色（RGBA 格式） -->
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- ========== box_6 ========== -->
+    <model name="colored_box_6">
+      <!-- 如果需要动态物体则设置为 false，若只做展示可设置为 true -->
+      <static>false</static>
+      <!-- 这里的 pose 中 z 值设为 0.075，即高度的一半，方便方块平稳放置在地面上 -->
+      <pose>1.4 1.2 0.1 0 0 0</pose>
+      <link name="box_link">
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 这里设置了红色作为示例，你可以根据需要修改颜色（RGBA 格式） -->
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- ========== box_7 ========== -->
+    <model name="colored_box_7">
+      <!-- 如果需要动态物体则设置为 false，若只做展示可设置为 true -->
+      <static>false</static>
+      <!-- 这里的 pose 中 z 值设为 0.075，即高度的一半，方便方块平稳放置在地面上 -->
+      <pose>0 1.8 0.1 0 0 0</pose>
+      <link name="box_link">
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 这里设置了红色作为示例，你可以根据需要修改颜色（RGBA 格式） -->
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- ========== box_8 ========== -->
+    <model name="colored_box_8">
+      <!-- 如果需要动态物体则设置为 false，若只做展示可设置为 true -->
+      <static>false</static>
+      <!-- 这里的 pose 中 z 值设为 0.075，即高度的一半，方便方块平稳放置在地面上 -->
+      <pose>1.4 1.8 0.1 0 0 0</pose>
+      <link name="box_link">
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 这里设置了红色作为示例，你可以根据需要修改颜色（RGBA 格式） -->
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- ========== box_9 ========== -->
+    <model name="colored_box_9">
+      <!-- 如果需要动态物体则设置为 false，若只做展示可设置为 true -->
+      <static>false</static>
+      <!-- 这里的 pose 中 z 值设为 0.075，即高度的一半，方便方块平稳放置在地面上 -->
+      <pose>1.4 2.7 0.1 0 0 0</pose>
+      <link name="box_link">
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <!-- 这里设置了红色作为示例，你可以根据需要修改颜色（RGBA 格式） -->
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>0.3 0.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+
+
+
+
+  </world>
+</sdf>
