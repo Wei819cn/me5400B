@@ -1,4 +1,4 @@
-image: /home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_gazebo_function/map/WHEELTEC_white.pgm
+image: /home/wyc/ros1_ws/src/wheeltec_robot_gazebo/wheeltec_gazebo_function/map/WHEELTEC.pgm
 resolution: 0.050000
 origin: [-0.598733, -0.561668, 0.000000]
 negate: 0

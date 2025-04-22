@@ -5,7 +5,7 @@ global_costmap:
    publish_frequency: 1.0 #参数决定代价地图发布可视化信息的速率（以Hz为单位）。
    static_map: false #参数确定是否由map_server提供的地图服务来进行代价地图的初始化。如果您没有使用现有的地图或地图服务器，请将static_map参数设置为false。当本地地图需要根据传感器数据动态更新的时候，我们通常会把这个参数设为false。
    transform_tolerance: 1
-   resolution: 0.01  # 单元格为 1cm
+   
 
    plugins:
      - {name: static_layer,            type: "costmap_2d::StaticLayer"}

@@ -41,12 +41,12 @@ TebLocalPlannerROS:
   vertices: [[-0.031, -0.093], [-0.031, 0.093],[0.209,0.093],[0.209, -0.093]] #机器人形状 for mini_akm
 
  xy_goal_tolerance: 0.02   #目标 xy 偏移容忍度  minimum 0.001 maximum 0.2
- yaw_goal_tolerance: 0.1 #目标 角度 偏移容忍度 minimum 0.001 maximum 0.1
+ yaw_goal_tolerance: 0.05 #目标 角度 偏移容忍度 minimum 0.001 maximum 0.1
  free_goal_vel: False  #允许机器人以最大速度驶向目的地
  complete_global_plan: True
  
  # Obstacles
- min_obstacle_dist: 0.01 #和障碍物最小距离
+ min_obstacle_dist: 0.05 #和障碍物最小距离
  include_costmap_obstacles: True  #是否将动态障碍物预测为速度模型，
  costmap_obstacles_behind_robot_dist: 1.5  #限制机器人后方规划时考虑的局部成本地图障碍物
  obstacle_poses_affected: 15   #障碍物姿态受影响0~30
