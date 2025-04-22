@@ -1,6 +1,6 @@
   <launch>
     <!--选择建图算法-->
-    <arg name="mapping_mode"  default="gmapping" doc="opt: gmapping,hector,cartographer,karto"/>
+    <arg name="mapping_mode"  default="cartographer" doc="opt: gmapping,hector,cartographer,karto"/>
     <!-- 开启gmapping建图算法  -->
     <group if="$(eval mapping_mode == 'gmapping')">
       <include file="$(find wheeltec_gazebo_function)/launch/include/algorithm_gmapping.launch" />
