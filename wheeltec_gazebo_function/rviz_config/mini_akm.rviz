@@ -25,7 +25,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: LaserScan
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -142,7 +142,7 @@ Visualization Manager:
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
-      Color: 25; 255; 0
+      Color: 239; 41; 41
       Enabled: true
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
@@ -340,6 +340,10 @@ Visualization Manager:
           Value: true
         left_rear_wheel_link:
           Value: true
+        map:
+          Value: true
+        odom:
+          Value: true
         right_front_axle_carrier:
           Value: true
         right_front_wheel_link:
@@ -353,25 +357,27 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_footprint:
-          base_link:
-            camera_link:
-              camera_frame_optical:
-                {}
-            imu_link:
-              {}
-            laser_link:
-              {}
-            left_front_axle_carrier:
-              left_front_wheel_link:
-                {}
-            left_rear_wheel_link:
-              {}
-            right_front_axle_carrier:
-              right_front_wheel_link:
-                {}
-            right_rear_wheel_link:
-              {}
+        map:
+          odom:
+            base_footprint:
+              base_link:
+                camera_link:
+                  camera_frame_optical:
+                    {}
+                imu_link:
+                  {}
+                laser_link:
+                  {}
+                left_front_axle_carrier:
+                  left_front_wheel_link:
+                    {}
+                left_rear_wheel_link:
+                  {}
+                right_front_axle_carrier:
+                  right_front_wheel_link:
+                    {}
+                right_rear_wheel_link:
+                  {}
       Update Interval: 0
       Value: true
     - Class: rviz/MarkerArray
@@ -573,17 +579,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 1.1993073225021362
-        Y: 0.2969192564487457
-        Z: -1.2089955806732178
+        X: 0.284711092710495
+        Y: -0.20350763201713562
+        Z: -1.2096068859100342
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5097978115081787
+      Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
-      Yaw: 3.465388298034668
+      Yaw: 4.655402660369873
     Saved: ~
 Window Geometry:
   Displays:
@@ -604,4 +610,4 @@ Window Geometry:
     collapsed: true
   Width: 1217
   X: 663
-  Y: 474
+  Y: 437

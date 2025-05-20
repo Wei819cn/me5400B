@@ -28,8 +28,8 @@ def send_goal(x, y, yaw):
 def force_forward(distance, speed=0.1):
     pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
     cmd = Twist()
-    #cmd.linear.x = -abs(speed)
-    cmd.linear.x = speed
+    cmd.linear.x = -abs(speed)
+    #cmd.linear.x = speed
     rate = rospy.Rate(10)
     duration = distance / speed
     t0 = rospy.Time.now().to_sec()
@@ -61,8 +61,8 @@ if __name__ == '__main__':
             forward_dist = 0.5
 
             # 前方缓冲点：从目标点往朝向方向 +0.5 米
-            x_buf = x - forward_dist * math.cos(yaw)
-            y_buf = y - forward_dist * math.sin(yaw)
+            x_buf = x + forward_dist * math.cos(yaw)
+            y_buf = y + forward_dist * math.sin(yaw)
 
             rospy.loginfo("阶段 1：导航至缓冲点 (%.2f, %.2f)", x_buf, y_buf)
             send_goal(x_buf, y_buf, yaw)

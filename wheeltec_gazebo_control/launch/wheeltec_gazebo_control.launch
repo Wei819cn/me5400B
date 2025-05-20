@@ -21,13 +21,39 @@ $(arg car_mode)_joint_state_controller"/>
     <node if="$(eval car_mode == 'mini_mec_control'  or car_mode == 'mini_mec')" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
       <remap from="/joint_states" to="/wheeltec/joint_states"/>
     </node> 
+    
         
     <!-- 开启teb_local_planner导航算法-默认使用teb算法-->
-    <include file="$(find wheeltec_gazebo_function)/launch/include/teb_local_planner.launch" if="$(arg gazebo_navigation)">
+    <!--<include file="$(find wheeltec_gazebo_function)/launch/include/teb_local_planner.launch" if="$(arg gazebo_navigation)">  -->
     <!-- 开启dwa_local_planner导航算法,与teb二者选其一，非全向移动如akm不可使用dwa算法-->
     <!-- <include file="$(find wheeltec_gazebo_function)/launch/include/dwa_local_planner.launch" if="$(arg gazebo_navigation)">  -->
+
+    <!-- 开启hybrid_astar_local_planner导航算法-倒车环境中最常使用的-->
+    <!--<include file="$(find wheeltec_gazebo_function)/launch/include/hybrid_astar_local_planner.launch" if="$(arg gazebo_navigation)">
         <arg name="car_mode" value="$(arg car_mode)"/>
+    </include>-->
+
+    <arg name="local_planner" default="hybrid" />
+
+    <!-- TEB 插件 -->
+    <include if="$(eval gazebo_navigation and local_planner == 'teb')"
+            file="$(find wheeltec_gazebo_function)/launch/include/teb_local_planner.launch">
+    <arg name="car_mode" value="$(arg car_mode)" />
     </include>
+
+    <!-- DWA 插件 -->
+    <include if="$(eval gazebo_navigation and local_planner == 'dwa')"
+            file="$(find wheeltec_gazebo_function)/launch/include/dwa_local_planner.launch">
+    <arg name="car_mode" value="$(arg car_mode)" />
+    </include>
+
+    <!-- Hybrid A* 插件（默认加载） -->
+    <include if="$(eval gazebo_navigation and local_planner == 'hybrid')"
+            file="$(find wheeltec_gazebo_function)/launch/include/hybrid_astar_local_planner.launch">
+    <arg name="car_mode" value="$(arg car_mode)" />
+    </include>
+
+    
 
     <!--判断车型是否为mini_akm,mini_mec和mini_4wd-->
     <group if="$(eval car_mode == 'mini_akm' or car_mode == 'mini_mec' or car_mode == 'mini_4wd')">

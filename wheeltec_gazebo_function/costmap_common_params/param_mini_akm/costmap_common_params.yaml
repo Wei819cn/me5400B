@@ -36,9 +36,9 @@ obstacle_layer:
 
 #cost_scaling_factor and inflation_radius were now moved to the inflation_layer ns
 inflation_layer:
-  enabled:              True #使能膨胀层
+  enabled:              false #使能膨胀层
   cost_scaling_factor:  5.0  # exponential rate at which the obstacle cost drops off (default: 10)
-  inflation_radius:     0.02  # 机器人膨胀半径，比如设置为0.3,意味着规划的路径距离0.3米以上，这个参数理论上越大越安全
+  inflation_radius:     0.05  # 机器人膨胀半径，比如设置为0.3,意味着规划的路径距离0.3米以上，这个参数理论上越大越安全
   #但是会导致无法穿过狭窄的地方
 
 static_layer:

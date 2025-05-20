@@ -7,7 +7,7 @@ planner_frequency: 1.0  #全局规划操作的执行频率.如果设置为0.0,�
 #       在接收到新的目标点或者局部规划器报告路径堵塞时才会重新执行规划操作.
 planner_patience: 3.0  #在空间清理操作执行前,留给规划器多长时间来找出一条有效规划.
 
-oscillation_timeout: 15.0  #执行修复机制前,允许振荡的时长.
+oscillation_timeout: 0.0  #执行修复机制前,允许振荡的时长.
 oscillation_distance: 0.1  #来回运动在多大距离以上不会被认为是振荡.
 
 #全局路径规划器
@@ -22,7 +22,7 @@ base_local_planner: "teb_local_planner/TebLocalPlannerROS" #指定用于move_bas
 
 max_planning_retries: 1  
 
-recovery_behavior_enabled: true  
+recovery_behavior_enabled: False  
 clearing_rotation_allowed: true  
 
 recovery_behaviors:  
