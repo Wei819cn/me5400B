@@ -1,17 +1,20 @@
 <launch>
   <arg name="car_mode" default=""/>
 
-  <!-- 1. 加载 costmap 和全局规划器配置 -->
+  <!-- 1. 加载 costmap 和通用参数配置 -->
   <rosparam file="$(find wheeltec_gazebo_function)/param_common/local_costmap_params.yaml"      command="load" ns="move_base"/>
   <rosparam file="$(find wheeltec_gazebo_function)/param_common/global_costmap_params.yaml"     command="load" ns="move_base"/>
   <rosparam file="$(find wheeltec_gazebo_function)/param_common/move_base_params.yaml"          command="load" ns="move_base"/>
-  <rosparam file="$(find wheeltec_gazebo_function)/param_common/base_global_planner_param.yaml" command="load" ns="move_base"/>
 
-  <!-- 2. 加载你自己的 Local Planner 参数 -->
+  <!-- 2. 加载你自己的 Global Planner 和 Local planner 参数 -->
   <rosparam file="$(find wheeltec_gazebo_function)/costmap_common_params/param_$(arg car_mode)/teb_local_planner_params.yaml"  command="load" ns="move_base"/>
+  <!--<rosparam file="$(find wheeltec_gazebo_function)/param_common/dwa_local_planner_params.yaml"  command="load" ns="move_base"/>-->
 
-  <!-- 3. 使用你自己的插件 -->
-  <param name="move_base/base_local_planner" value="hybrid_astar_planner/HybridAStarPlanner"/>
+
+  <!-- 3. 设置 Global Planner 和 Local Planner 插件 -->
+  <param name="move_base/base_global_planner" value="hybrid_astar_planner/HybridAStarPlanner"/>
+  <param name="move_base/base_local_planner" value="teb_local_planner/TebLocalPlannerROS"/>
+
 
   <!-- 4. 启动 move_base 节点 -->
   <node pkg="move_base" type="move_base" name="move_base" output="screen">
